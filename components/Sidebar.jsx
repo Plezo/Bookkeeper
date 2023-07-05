@@ -1,19 +1,38 @@
 'use client'
 
-import { LockClosedIcon } from '@heroicons/react/24/solid'
-import { signOut } from 'next-auth/react'
+import { HomeIcon } from '@heroicons/react/24/solid'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 function Sidebar() {
+
+  const router = useRouter();
+
+  const [query, setQuery] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    router.push(`/stock/${query}`)
+  }
+
   return (
-    <div className='p-5 h-screen overflow-y-scroll scrollbar-hide bg-gray-900'>
+    <div className='text-gray-500 p-12 text-xs lg:text-sm border-r border-gray-900 overflow-y-scroll  scrollbar-hide h-screen sm:max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex pb-36'>
         <div className='space-y-4'>
           <button
-          className='flex p-5 items-center space-x-2 hover:text-white hover:bg-gray-800 active:bg-gray-700 rounded-lg' 
-          onClick={signOut}
+          className='p-4 flex items-center space-x-2 hover:text-white' 
           >
-            <LockClosedIcon className='h-5 w-5'/>
-            <p>Sign out</p>
+            <HomeIcon className='h-5 w-5'/>
+            <p>Home</p>
           </button>
+          <hr className='border-t-[0.1px] border-gray-900' />
+          <form onSubmit={handleSubmit} className='flex justify-center w-2/3'>
+            <input 
+            value={query || ''}
+            onChange={(e) => setQuery(e.target.value)}
+            className='px-5 py-1 w-2/3 sm:px-5 sm:py-3 flex-1 text-zinc-200 bg-zinc-800 focus:bg-black rounded-lg focus:outline-none focus:ring-[2px] focus:ring-green-700 placeholder:text-zinc-400'
+            placeholder='AAPL'
+            />
+          </form>
         </div>
     </div>
   )
