@@ -1,3 +1,11 @@
+## Notes
+
+Things I need when researching market
+
+- Cash flow, balance sheet, income statements (annual and quarterly)
+- Historical price, market cap, institutional ownership, dividend history
+- Earnings (and estimated earnings)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
