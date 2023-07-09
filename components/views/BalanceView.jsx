@@ -48,7 +48,7 @@ function BalanceView({ ticker }) {
         <thead className="border-b font-medium border-neutral-500">
           <tr>
             <th scope="col" className="">
-              All values USD Millions
+              All values {data[0]["reportedCurrency"]} Millions
             </th>
             {data.map((obj, i) => {
               return (

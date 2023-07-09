@@ -1,11 +1,5 @@
 "use client";
 
-// import {
-//   getBalanceSheet,
-//   getIncomeSheet,
-//   getCashFlowStatement,
-// } from "@/lib/fmp";
-
 import {
   OverviewView,
   BalanceView,
@@ -13,8 +7,7 @@ import {
   CashFlowView,
 } from "@/components/views";
 
-import { camelToTitle, formatNum } from "@/lib/utils";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function StockHeader({ ticker }) {
   const [view, setView] = useState("overview");
