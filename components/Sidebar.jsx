@@ -1,6 +1,10 @@
 "use client";
 
-import { HomeIcon } from "@heroicons/react/24/solid";
+import {
+  BuildingLibraryIcon,
+  ChartBarIcon,
+  HomeIcon,
+} from "@heroicons/react/24/solid";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -23,6 +27,13 @@ function Sidebar() {
         >
           <HomeIcon className="h-5 w-5" />
           <p>Home</p>
+        </button>
+        <button
+          className="p-4 flex items-center space-x-2 hover:text-white"
+          onClick={() => router.push("/stock")}
+        >
+          <ChartBarIcon className="h-5 w-5" />
+          <p>Analyze</p>
         </button>
         <hr className="border-t-[0.1px] border-gray-900" />
         <form onSubmit={handleSubmit} className="flex justify-center w-2/3">

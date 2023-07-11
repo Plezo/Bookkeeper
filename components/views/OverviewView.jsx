@@ -1,7 +1,12 @@
 import React from "react";
+import TradingViewWidget from "../TradingViewWidget";
 
-function OverviewView() {
-  return <div>OverviewView</div>;
+function OverviewView({ ticker }) {
+  return (
+    <div>
+      <TradingViewWidget ticker={ticker} />
+    </div>
+  );
 }
 
 export default OverviewView;

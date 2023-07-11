@@ -41,7 +41,7 @@ function StockHeader({ ticker }) {
         </button>
       </div>
 
-      <section>
+      <section className="h-screen">
         {view === "overview" && <OverviewView ticker={ticker} />}
         {view === "income" && <IncomeView ticker={ticker} />}
         {view === "balance" && <BalanceView ticker={ticker} />}
